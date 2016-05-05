@@ -36,3 +36,7 @@
  # Optional REPL history
 	
  .node_repl_history
+
+# customize
+node_modules
+bower_components
