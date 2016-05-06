@@ -1,3 +1,56 @@
-{% set a = '爽的' %}
+<div id="demo">
+    <template v-for="branch in branches">
+        <input type="radio" name="branch" :id="branch" :value="branch" v-model="currentBranch">
+        <label :for="branch">${branch}</label>
+    </template>
+    <p>vuejs/vue@${currentBranch}</p>
+    <ul>
+        <li v-for="new in news">
+            <a :href="new.url | formatUrl" target="_blank" class="title">${ new.title.slice(0, 20) }</a> -
+            <span class="summary">${ new.summary }</span>
+            <br> by <span class="author">${ new.newsby }</span> at <span class="date">${ new.d | formatDate }</span>
+        </li>
+    </ul>
+</div>
 
-<h1>Hello World {{ a }}</h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.min.js"></script>
+<script>
+    Vue.config.delimiters = ['${', '}'];
+
+    var demo = new Vue({
+
+        el: '#demo',
+
+        data: {
+            branches: ['36', 'hot'],
+            currentBranch: '36',
+            news: null
+        },
+
+        created: function() {
+            this.fetchData()
+        },
+
+        watch: {
+            currentBranch: 'fetchData'
+        },
+
+        filters: {
+            formatUrl: function(v) {
+                return 'http://www.nownews.com' + v;
+            }
+        },
+
+        methods: {
+            fetchData: function() {
+                var self = this;
+                self.$http.post('/api', {
+                    url: self.currentBranch
+                }).then(function(response){
+                    self.news = response.data;
+                })
+            }
+        }
+    })
+</script>
