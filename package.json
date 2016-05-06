@@ -1,16 +1,38 @@
 {
-  "name": "WBvue",
-  "version": "0.0.1",
-  "description": "WB vue example",
+  "name": "NOWvue",
+  "version": "1.0.0",
+  "description": "hapi example",
   "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js",
+    "test": "lab -c -L",
+    "test-cover": "lab -c -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html"
   },
-  "author": "Webber Wu",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:webber0928/testVue.git"
+  },
+  "author": "WebberWu <bird23074035@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webber0928/testVue/issues"
+  },
+  "homepage": "https://github.com/webber0928/testVue",
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "dependencies": {
-    "hapi": "^13.3.0",
-    "lodash": "^4.11.2"
+    "confidence": "3.x.x",
+    "glue": "3.x.x",
+    "hapi": "13.x.x",
+    "hoek": "3.x.x",
+    "jade": "1.x.x",
+    "vision": "4.x.x",
+    "visionary": "4.x.x"
+  },
+  "devDependencies": {
+    "code": "2.x.x",
+    "lab": "10.x.x",
+    "nodemon": "1.x.x"
   }
 }
