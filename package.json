@@ -25,6 +25,7 @@
     "confidence": "3.x.x",
     "glue": "3.x.x",
     "hapi": "13.x.x",
+    "hapi-nunjucks": "0.0.5",
     "hoek": "3.x.x",
     "jade": "1.x.x",
     "vision": "4.x.x",

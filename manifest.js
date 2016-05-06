@@ -33,7 +33,7 @@ const manifest = {
             plugin: {
                 register: 'visionary',
                 options: {
-                    engines: { jade: 'jade' },
+                    engines: { html: 'hapi-nunjucks' },
                     path: './server/web'
                 }
             }
