@@ -1,5 +1,6 @@
 'use strict';
 const fetch = require('node-fetch');
+const Setup = require('../../setup');
 
 exports.register = function (server, options, next) {
 
@@ -7,7 +8,7 @@ exports.register = function (server, options, next) {
         method: 'POST',
         path: '/',
         handler: (request, reply) => {
-            const url = request.payload.url;
+            const url = Setup.api + request.payload.url;
 
             fetch( url, {
                 timeout: 1000
