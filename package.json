@@ -26,7 +26,7 @@
     "glue": "3.x.x",
     "hapi": "13.x.x",
     "hapi-nunjucks": "0.0.5",
-    "hoek": "3.x.x",
+    "hoek": "4.2.1",
     "node-fetch": "^1.5.1",
     "vision": "4.x.x",
     "visionary": "4.x.x"
